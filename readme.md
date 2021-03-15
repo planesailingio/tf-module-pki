@@ -1,7 +1,7 @@
 # Terraform PKI Module
 
-This module creates a basic three tier certificate chain using Terraform.
-BRUCY BONUS: I do a lot of work in Kubernetes so the module will also create a K8s secret for Cert-Manager.
+This module creates a basic three tier certificate chain using Terraform.    
+BRUCY BONUS: I do a lot of work in Kubernetes so the module also creates a K8s secret for Cert-Manager.
 
 To secure the credentials refer to tools such as [Stackoverflow/Blackbox](https://github.com/StackExchange/blackbox) that leverage GPG cryptography.
 
