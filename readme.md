@@ -12,13 +12,20 @@ The module will generate;
 - Several client certificates that you can use to terminate TLS
 Inspect the `vars.tf` file to configure names and certificate common names.
 
+
+## Getting Started
+### Step 1
 ```
 git clone git@github.com:planesailingio/tf-module-pki.git && cd tf-module-pki
-terraform init && terraform apply -auto-approve
 ```
-
-After running a certs folder will be created with subfolders for each certificate tier. I do a lot of work with 
+### Step 2
+Configure `client_cert_fqdn` in `vars.tf` with your FQDN's you want client certificates to be created.
+### Step 3
+Run `terraform init && terraform apply -auto-approve`    
+After terraform finishes, a certs folder will be created called `certs` with subfolders for each certificate tier.   
+As an example:
 ```
+certs
 ├── ca-cluster-issuer.yaml
 ├── client
 │   ├── rhysevans.co.abc
@@ -40,3 +47,9 @@ After running a certs folder will be created with subfolders for each certificat
     ├── cert.crt
     └── cert.key
 ```
+
+### Step 4
+Distribute and import the `certs/rootca/cert.crt` into your services, systems or browsers.
+
+### You're good to go!
+Use your new certificates and they will be trusted by your clients such as a web browser.
