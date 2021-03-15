@@ -49,7 +49,8 @@ certs
 ```
 
 ### Step 4
-Distribute and import the `certs/rootca/cert.crt` into your services, systems or browsers.
+Distribute and import the `certs/rootca/cert.crt` into your services, systems or browsers.    
+NOTE: This module doesn't provide supporting 'production' PKI infrastructure e.g. Authority Information Access URI's (AIA) nor Certificate Revocation Lists (CRL's) as such the chain must be provided in the client certificates - This is done for you with client certificates built with this module.
 
 ### You're good to go!
 Use your new certificates and they will be trusted by your clients such as a web browser.
